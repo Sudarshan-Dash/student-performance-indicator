@@ -1,14 +1,16 @@
 import os
 import sys
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from dataclasses import dataclass
 
 # Add the project root directory to the Python path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 
 from src.exception import CustomException
 from src.logger import logging
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from dataclasses import dataclass
+from src.components.data_transformation import DataTransformation, DataTransformationConfig
+from src.components.model_train import ModelTrainerConfig, ModelTrainer  # Updated import
 
 @dataclass
 class DataIngestionConfig:
